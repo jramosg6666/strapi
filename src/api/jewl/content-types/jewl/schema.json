@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jewls",
+  "info": {
+    "singularName": "jewl",
+    "pluralName": "jewls",
+    "displayName": "jewl",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users_permissions_client": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "users_permissions_vendor": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "code": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "count": {
+      "type": "integer",
+      "default": 0
+    },
+    "status": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "jewl_catalogue": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::jewl-catalogue.jewl-catalogue"
+    }
+  }
+}

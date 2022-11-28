@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jewl_catalogues",
+  "info": {
+    "singularName": "jewl-catalogue",
+    "pluralName": "jewl-catalogues",
+    "displayName": "jewl_catalogue",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "weight": {
+      "type": "float"
+    },
+    "model": {
+      "type": "string",
+      "default": "\"\""
+    },
+    "price": {
+      "type": "float"
+    },
+    "description": {
+      "type": "text",
+      "default": "\"\""
+    },
+    "carats": {
+      "type": "float"
+    },
+    "large": {
+      "type": "float"
+    },
+    "measure_unit_weight": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::measure-unit.measure-unit"
+    },
+    "measure_unit_large": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::measure-unit.measure-unit"
+    },
+    "measure_unit_price": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::measure-unit.measure-unit"
+    },
+    "measure_unit_carats": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::measure-unit.measure-unit"
+    },
+    "availability": {
+      "type": "integer",
+      "default": 0
+    },
+    "code": {
+      "type": "string",
+      "required": true,
+      "default": "\"\""
+    }
+  }
+}
