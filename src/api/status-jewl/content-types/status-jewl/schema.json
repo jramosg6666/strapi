@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "status_jewls",
+  "info": {
+    "singularName": "status-jewl",
+    "pluralName": "status-jewls",
+    "displayName": "status_jewl"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
