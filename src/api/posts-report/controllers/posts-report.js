@@ -439,6 +439,7 @@ const rawBuilder = strapi.db.connection.raw(
 
     return resp.rows;
 }
+
 const findUserByUserName= async(pObjeto)=>
 {
 const username=pObjeto.params.username;
@@ -463,6 +464,53 @@ const rawBuilder = strapi.db.connection.raw(
     return resp.rows;  
  }
 }
+const findUserVendedorByUserName= async(pObjeto)=>
+{
+const username=pObjeto.params.username;
+if (username=='all')
+ {
+
+const rawBuilder = strapi.db.connection.raw(
+      "select * from up_users where rol = 'vendedor' "
+    );
+    const resp = await rawBuilder.then();
+
+    return resp.rows;
+ }
+ else
+ {
+
+const rawBuilder = strapi.db.connection.raw(
+      "select * from up_users where rol = 'vendedor' and username = '"+username+"'"
+    );
+    const resp = await rawBuilder.then();
+
+    return resp.rows;  
+ }
+}
+const updateUser= async(pObjeto)=>
+{
+const phone=pObjeto.params.phone;
+const rawBuilder = strapi.db.connection.raw(
+      "select * from up_users where phone = '"+phone+"'"
+    );
+    const resp = await rawBuilder.then();
+
+    return resp.rows;
+}
+const updateUserBlocked= async(pObjeto)=>
+{
+    const blocked=pObjeto.params.blocked;
+    const id=pObjeto.params.id;
+
+    const rawBuilder = strapi.db.connection.raw(
+      "update up_users set  blocked = '"+blocked+"' where id="+id
+    );
+    const resp = await rawBuilder.then();
+
+    return resp.rows;
+}
+
 module.exports = {    
 findJwelByClient,
 findJwelByVendedor,
@@ -475,6 +523,8 @@ findUserByRol,
 findUserByPhone,
 findVendedorByAgeBySexoByCantVentas,
 findUserByUserName,
+findUserVendedorByUserName,
+updateUserBlocked,
 /*findUserByAge,
 findUserBySexo,
 //findUserByCantVentas,

@@ -124,6 +124,23 @@ module.exports = {
             middlewares: [],
         },          
         },
-
+        {
+          method: "GET",
+          path: "/user/vendedor/findByUserName/:username",
+          handler: "posts-report.findUserVendedorByUserName",
+          config: {
+            policies: [],
+            middlewares: [],
+        },          
+        },
+{
+          method: "GET",
+          path: "/user/updateUserBlocked/:id/:blocked",
+          handler: "posts-report.updateUserBlocked",
+          config: {
+            policies: [],
+            middlewares: [],
+        },          
+        },
       ],
     };
